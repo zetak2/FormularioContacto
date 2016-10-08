@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Formulario Contacto</string>
+    <string name="hint_nombre">Nombre Completo</string>
+    <string name="hint_fecha">Fecha de Nacimiento</string>
+    <string name="hint_calendario">Fecha de Nacimiento</string>
+    <string name="hint_telefono">Teléfono</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_descripcion">Descripción Contacto</string>
+    <string name="btn_next">Siguiente</string>
+    <string name="btn_fecha">Establecer Fecha</string>
+    <string name="error_datos">No se han introducido todos los datos necesarios</string>
+
+    <string name="confirmar_titulo">Confirmar Datos</string>
+    <string name="confirmar_nombre">Nombre:</string>
+    <string name="confirmar_fecha">Fecha de Nacimiento:</string>
+    <string name="confirmar_telefono">Tel:</string>
+    <string name="confirmar_email">Email:</string>
+    <string name="confirmar_descripcion">Descripcion:</string>
+
+    <string name="confirmar_nombre_valor">Jose Manuel Alvarez Martinez</string>
+    <string name="confirmar_fecha_valor">25/04/1990 </string>
+    <string name="confirmar_telefono_valor">5518491498</string>
+    <string name="confirmar_email_valor">jalvarez@micorreo.com</string>
+    <string name="confirmar_descripcion_valor">Lo conocí en un concierto de Metallica</string>
+
+    <string name="btn_edit">Editar Datos</string>
+</resources>
