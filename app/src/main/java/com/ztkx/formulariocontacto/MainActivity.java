@@ -32,6 +32,20 @@ public class MainActivity extends AppCompatActivity {
         tiDescripcion   = (TextInputEditText) findViewById(R.id.tiDescripcion);
         datePicker      = (DatePicker) findViewById(R.id.datePicker);
 
+
+        Bundle params = getIntent().getExtras();
+
+        if (params!=null){
+            tiNombre.setText(params.getString("nombreContacto"));
+            tiTelefono.setText(params.getString("telefonoContacto"));
+            tiEmail.setText(params.getString("emailContacto"));
+            tiDescripcion.setText(params.getString("descripcionContacto"));
+            year            = params.getInt("yearFecha");
+            month           = params.getInt("monthFecha");
+            day             = params.getInt("dayFecha");
+            datePicker.init(year,month,day,null);
+        }
+
     }
 
     public void confirmarContacto(View v){
@@ -43,24 +57,25 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this,R.string.error_datos,Toast.LENGTH_LONG).show();
         }
         else{
+            getPickerDate();
             Intent intent = new Intent(MainActivity.this,Confirmacion.class);
             intent.putExtra("nombreContacto",tiNombre.getText().toString());
-            intent.putExtra("fechaContacto",stringFecha());
+            intent.putExtra("yearFecha",year);
+            intent.putExtra("monthFecha",month);
+            intent.putExtra("dayFecha",day);
             intent.putExtra("telefonoContacto",tiTelefono.getText().toString());
             intent.putExtra("emailContacto",tiEmail.getText().toString());
             intent.putExtra("descripcionContacto",tiDescripcion.getText().toString());
             startActivity(intent);
+            finish();
         }
 
     }
 
-    public String stringFecha(){
-        String stringFecha=datePicker.getDayOfMonth()+" / "+(datePicker.getMonth()+1)+" / "+datePicker.getYear();
-        return stringFecha;
-    }
-
-    public void openDatePickerDialog(View v){
-
+    public void getPickerDate (){
+        year    = datePicker.getYear();
+        month   = datePicker.getMonth();
+        day     = datePicker.getDayOfMonth();
     }
 
 
